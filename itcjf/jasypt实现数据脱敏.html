@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用jasypt实现数据脱敏 | itcjf blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="itcjf blog vuepress">
+    
+    <link rel="preload" href="/vuepress-itcjf/assets/css/0.styles.35918b0e.css" as="style"><link rel="preload" href="/vuepress-itcjf/assets/js/app.3a9f2499.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/3.fab4c862.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/11.cb92f820.js" as="script"><link rel="prefetch" href="/vuepress-itcjf/assets/js/10.23b54ef2.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/12.02ad0faa.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/13.744fb1a7.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/4.fe1519f8.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/5.b2afcdbe.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/6.8b453bb1.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/7.a881551a.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/8.6c521a3d.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/9.f4d642ec.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/vendors~docsearch.a93e97a7.js">
+    <link rel="stylesheet" href="/vuepress-itcjf/assets/css/0.styles.35918b0e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-itcjf/" class="home-link router-link-active"><!----> <span class="site-name">itcjf blog</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/vuepress-itcjf/" aria-current="page" class="sidebar-link">itcjf blog</a></li><li><a href="/vuepress-itcjf/itcjf/APIJSON使用文档.html" class="sidebar-link">APIJSON使用</a></li><li><a href="/vuepress-itcjf/itcjf/docker指令使用记录.html" class="sidebar-link">docker指令使用记录</a></li><li><a href="/vuepress-itcjf/itcjf/jasypt实现数据脱敏.html" class="active sidebar-link">使用jasypt实现数据脱敏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-itcjf/itcjf/jasypt实现数据脱敏.html#先导入依赖" class="sidebar-link">先导入依赖</a></li><li class="sidebar-sub-header"><a href="/vuepress-itcjf/itcjf/jasypt实现数据脱敏.html#添加相关配置" class="sidebar-link">添加相关配置</a></li><li class="sidebar-sub-header"><a href="/vuepress-itcjf/itcjf/jasypt实现数据脱敏.html#使用jasyptutils工具类生成密文" class="sidebar-link">使用JasyptUtils工具类生成密文</a></li></ul></li><li><a href="/vuepress-itcjf/itcjf/xxl-job使用文档.html" class="sidebar-link">xxl-job使用文档</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用jasypt实现数据脱敏"><a href="#使用jasypt实现数据脱敏" class="header-anchor">#</a> 使用jasypt实现数据脱敏</h1> <h2 id="先导入依赖"><a href="#先导入依赖" class="header-anchor">#</a> 先导入依赖</h2> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!--配置文件加密--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.github.ulisesbocchio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jasypt-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.0.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="添加相关配置"><a href="#添加相关配置" class="header-anchor">#</a> 添加相关配置</h2> <p>密钥是必填，解密数据格式可不设置，不配置默认为ENC(加密后的数据)</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">jasypt</span><span class="token punctuation">:</span>
+  <span class="token key atrule">encryptor</span><span class="token punctuation">:</span>
+    <span class="token comment"># 秘钥，加密解密所需要的密钥</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> yml_encryptor
+    <span class="token comment"># 加密算法</span>
+    <span class="token key atrule">algorithm</span><span class="token punctuation">:</span> PBEWithMD5AndDES
+    <span class="token comment"># 需要解密格式前后缀,默认为ENC()</span>
+<span class="token comment">#    property:</span>
+<span class="token comment">#      prefix: &quot;encryption[&quot;</span>
+<span class="token comment">#      suffix: &quot;]&quot;</span>
+</code></pre></div><p><strong>注意：jasypt.encryptor.password密钥的配置有三种方式</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// a、配置文件的方式：如上</span>
+<span class="token comment">// b、通过在启动服务上增加参数</span>
+java <span class="token operator">-</span>jar <span class="token operator">-</span><span class="token class-name">Djasypt</span><span class="token punctuation">.</span>encryptor<span class="token punctuation">.</span>password<span class="token operator">=</span>密钥  springboot<span class="token operator">-</span>jasypt<span class="token operator">-</span><span class="token number">2.3</span><span class="token number">.3</span><span class="token punctuation">.</span>RELEASE<span class="token punctuation">.</span>jar
+<span class="token comment">// c、在启动类上增加</span>
+<span class="token comment">/** 配置加解密秘钥，与配置文件的密文分开放 */</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;jasypt.encryptor.password&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;密钥&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>3.0.2版本开始更改了默认的加密算法为PBEWITHHMACSHA512ANDAES_256，使用此加密算法JDK版本1.9以上，或者在JDK中添加 JCE</p> <h2 id="使用jasyptutils工具类生成密文"><a href="#使用jasyptutils工具类生成密文" class="header-anchor">#</a> 使用JasyptUtils工具类生成密文</h2> <ul><li>包路径 <code>org.jeecg.common.util.JasyptUtils</code> ，在main方法中，输入你要加密的数据，直接运行main方法即可</li> <li>这里有几个注意的点，此工具类只是用于生成你需要的密文，所以密钥一定要与你配置文件中的一致，加密算法这里暂时定为 <code>PBEWithMD5AndDES</code></li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">SimpleStringPBEConfig</span> <span class="token function">getSimpleStringPBEConfig</span><span class="token punctuation">(</span><span class="token class-name">String</span> secretKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SimpleStringPBEConfig</span> config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleStringPBEConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 密钥</span>
+        config<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>secretKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setPoolSize</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// jasypt在版本3.0.2加密算法默认为 PBEWITHHMACSHA512ANDAES_256</span>
+        <span class="token comment">// PBEWITHHMACSHA512ANDAES_256，该加密算法，支持JDK1.9以上，</span>
+        <span class="token comment">// 解决方案：1、下载JCE，2、降低版本，3、更换加密算法（推荐此方式，也是当前再用的方式）</span>
+        <span class="token comment">// 设置加密算法</span>
+        config<span class="token punctuation">.</span><span class="token function">setAlgorithm</span><span class="token punctuation">(</span><span class="token string">&quot;PBEWithMD5AndDES&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setKeyObtentionIterations</span><span class="token punctuation">(</span><span class="token string">&quot;1000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setProviderName</span><span class="token punctuation">(</span><span class="token string">&quot;SunJCE&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setSaltGeneratorClassName</span><span class="token punctuation">(</span><span class="token string">&quot;org.jasypt.salt.RandomSaltGenerator&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setIvGeneratorClassName</span><span class="token punctuation">(</span><span class="token string">&quot;org.jasypt.iv.RandomIvGenerator&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setStringOutputType</span><span class="token punctuation">(</span><span class="token string">&quot;base64&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 要加密的数据</span>
+        <span class="token class-name">String</span> message <span class="token operator">=</span> <span class="token string">&quot;明文&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 此密钥必须要与配置文件中的密钥一致</span>
+        <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">&quot;加密密钥&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//一个同样的密码和秘钥，每次执行加密，密文都是不一样的。但是解密是没问题的。</span>
+        <span class="token class-name">String</span> jasyptEncrypt <span class="token operator">=</span> <span class="token function">stringEncryptor</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> message<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;加密后的值：&quot;</span> <span class="token operator">+</span> jasyptEncrypt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">String</span> jasyptEncrypt1 <span class="token operator">=</span> <span class="token function">stringEncryptor</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> jasyptEncrypt<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;解密后的值：&quot;</span> <span class="token operator">+</span> jasyptEncrypt1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-itcjf/itcjf/docker指令使用记录.html" class="prev">
+        docker指令使用记录
+      </a></span> <span class="next"><a href="/vuepress-itcjf/itcjf/xxl-job使用文档.html">
+        xxl-job使用文档
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-itcjf/assets/js/app.3a9f2499.js" defer></script><script src="/vuepress-itcjf/assets/js/3.fab4c862.js" defer></script><script src="/vuepress-itcjf/assets/js/11.cb92f820.js" defer></script>
+  </body>
+</html>
