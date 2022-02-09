@@ -7,7 +7,7 @@ module.exports = {
         algolia: {
             appId: "AI5QOZ7827",
             apiKey: "10306174b4cb710fe9de532f1d364329",
-            indexName: "srbmp-dev",
+            indexName: "itcjf-blog",
             algoliaOptions: {
                 hitsPerPage: 10,
                 facetFilters: ""
