@@ -8,7 +8,7 @@
     
     <meta name="description" content="itcjf blog vuepress">
     
-    <link rel="preload" href="/vuepress-itcjf/assets/css/0.styles.b13c1e6c.css" as="style"><link rel="preload" href="/vuepress-itcjf/assets/js/app.adf19a22.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/3.fab4c862.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/9.f4d642ec.js" as="script"><link rel="prefetch" href="/vuepress-itcjf/assets/js/10.23b54ef2.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/11.cb92f820.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/12.6af78c19.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/13.744fb1a7.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/4.fe1519f8.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/5.b2afcdbe.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/6.8b453bb1.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/7.a881551a.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/8.9013c638.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/vendors~docsearch.a93e97a7.js">
+    <link rel="preload" href="/vuepress-itcjf/assets/css/0.styles.b13c1e6c.css" as="style"><link rel="preload" href="/vuepress-itcjf/assets/js/app.ce7b9d7f.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/3.fab4c862.js" as="script"><link rel="preload" href="/vuepress-itcjf/assets/js/9.f4d642ec.js" as="script"><link rel="prefetch" href="/vuepress-itcjf/assets/js/10.23b54ef2.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/11.cb92f820.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/12.b1cb6d55.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/13.744fb1a7.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/4.fe1519f8.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/5.b2afcdbe.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/6.8b453bb1.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/7.a881551a.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/8.e56b4318.js"><link rel="prefetch" href="/vuepress-itcjf/assets/js/vendors~docsearch.a93e97a7.js">
     <link rel="stylesheet" href="/vuepress-itcjf/assets/css/0.styles.b13c1e6c.css">
   </head>
   <body>
@@ -59,7 +59,7 @@
         <span class="token property">&quot;@datasource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;druid&quot;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div></li></ol> <p><strong>注意：<code>@schema</code> 和 <code>@datasource</code> 都是在表名层级下</strong></p></li></ul></li></ol> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <ul><li>调式接口时建议使用<code>Postman</code>，数据库建议开启忽略大小写，<code>APIJSON</code>启动会去校验<code>access</code>表权限信息，连接<code>MySQL</code>时 <code>access</code> 会变成首字母大写<code>Access</code>，如果<code>MySQL</code>没有开启忽略大小写，则是提示找不到表</li> <li>需要在<code>APIJSON</code>中增加一张表控制，就需要在<code>access</code>表添加一个权限数据，否则会提示无权访问，<code>access</code> 中 <code>name</code> 为表的实际名字， <code>alias</code>为别名，查询某个表数据时，使用别名，别名命名规则和Java的一致，驼峰规则（强制性的），<code>APIJSON</code>对命名风格这块限制的很死，如果没有设置别名，那实际的表名就必须按照驼峰规则命名，其余<code>get</code>、<code>post</code>等接口权限可以按照默认值设置或者根据实际项目需求来去设置</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/9/2022, 8:35:40 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div></li></ol> <p><strong>注意：<code>@schema</code> 和 <code>@datasource</code> 都是在表名层级下</strong></p></li></ul></li></ol> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <ul><li>调式接口时建议使用<code>Postman</code>，数据库建议开启忽略大小写，<code>APIJSON</code>启动会去校验<code>access</code>表权限信息，连接<code>MySQL</code>时 <code>access</code> 会变成首字母大写<code>Access</code>，如果<code>MySQL</code>没有开启忽略大小写，则是提示找不到表</li> <li>需要在<code>APIJSON</code>中增加一张表控制，就需要在<code>access</code>表添加一个权限数据，否则会提示无权访问，<code>access</code> 中 <code>name</code> 为表的实际名字， <code>alias</code>为别名，查询某个表数据时，使用别名，别名命名规则和Java的一致，驼峰规则（强制性的），<code>APIJSON</code>对命名风格这块限制的很死，如果没有设置别名，那实际的表名就必须按照驼峰规则命名，其余<code>get</code>、<code>post</code>等接口权限可以按照默认值设置或者根据实际项目需求来去设置</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/9/2022, 9:46:41 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/vuepress-itcjf/" class="prev router-link-active">
         Home
@@ -68,6 +68,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/vuepress-itcjf/assets/js/app.adf19a22.js" defer></script><script src="/vuepress-itcjf/assets/js/3.fab4c862.js" defer></script><script src="/vuepress-itcjf/assets/js/9.f4d642ec.js" defer></script>
+    <script src="/vuepress-itcjf/assets/js/app.ce7b9d7f.js" defer></script><script src="/vuepress-itcjf/assets/js/3.fab4c862.js" defer></script><script src="/vuepress-itcjf/assets/js/9.f4d642ec.js" defer></script>
   </body>
 </html>
