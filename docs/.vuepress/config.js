@@ -15,7 +15,10 @@ module.exports = {
         },
         sidebar: [
             '/',
-            '/itcjf/my',
+            '/itcjf/APIJSON使用文档',
+            '/itcjf/docker指令使用记录',
+            '/itcjf/jasypt实现数据脱敏',
+            '/itcjf/xxl-job使用文档',
         ],
        
     },
