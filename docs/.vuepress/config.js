@@ -1,7 +1,7 @@
 module.exports = {
     title: "itcjf blog",
     description: "itcjf blog vuepress",
-    base: '/vuepress-itcjf',
+    base: '/vuepress-itcjf/',
     themeConfig: {
         searchMaxSuggestions: 10,
         algolia: {
