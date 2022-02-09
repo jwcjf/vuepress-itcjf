@@ -22,25 +22,23 @@ module.exports = {
         ],
         nav: [
             {
-              text: '文档',
-              ariaLabel: '文档',
-              items: [
-                { text: 'my', link: '/itcjf/my' },
-                { text: 'xxl-job使用文档', link: '/itcjf/xxl-job使用文档' },
-                { text: 'docker指令使用记录', link: '/itcjf/docker指令使用记录' },
-                { text: 'jasypt实现数据脱敏', link: '/itcjf/jasypt实现数据脱敏' },
-                { text: 'xxl-job使用文档', link: '/itcjf/xxl-job使用文档' },
-              ]
+                text: '文档',
+                ariaLabel: '文档',
+                items: [
+                    { text: 'my', link: '/itcjf/my' },
+                    { text: 'xxl-job使用文档', link: '/itcjf/xxl-job使用文档' },
+                    { text: 'docker指令使用记录', link: '/itcjf/docker指令使用记录' },
+                    { text: 'jasypt实现数据脱敏', link: '/itcjf/jasypt实现数据脱敏' },
+                    { text: 'xxl-job使用文档', link: '/itcjf/xxl-job使用文档' },
+                ]
             }
-          ],
+        ],
 
         repo: "https://github.com/jwcjf/vuepress-itcjf",
         repoLabel: "github",
-        lastUpdated: 'Last Updated', 
-       
-    },
-        
+        lastUpdated: 'Last Updated',
 
+    },
     plugins: [
         ["@tencent/vuepress-plugin-element-tabs"],
         [

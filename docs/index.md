@@ -49,17 +49,17 @@ actionLink: /itcjf/my/
 
 ## 学习路线
 ## HTML和CSS以及DOM交互学习路线
-<p align="center"><img src="images/HTML_CSS.jpg"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/HTML_CSS.jpg"/></p>
 
 ## JavaScript学习路线
-<p align="center"><img src="images/Javascript.jpg"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/Javascript.jpg"/></p>
 
 ## 数据结构和算法
-<p align="center"><img src="images/algorithms.jpg"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/algorithms.jpg"/></p>
 
 ## 目录(善用Ctrl+F)
 
-- #### <img src="images/20210524160504644.png" width="60"/>  [Web前端基础](https://itcjf.blog.csdn.net/category_7202464.html)
+- #### <img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/20210524160504644.png" width="60"/>  [Web前端基础](https://itcjf.blog.csdn.net/category_7202464.html)
 
 - [我参与的编程导航项目 荣获 腾讯第一届云开发大赛一等奖 #云开发](https://itcjf.blog.csdn.net/article/details/117986107)
 - [大前端学习路线，完整知识体系（持续更新，欢迎关注点赞）](https://itcjf.blog.csdn.net/article/details/117968520)
@@ -72,13 +72,13 @@ actionLink: /itcjf/my/
 
 熬夜不易，觉得有很大帮助的朋友可以赏杯咖啡，赏了一定要加我微信跟我说。
 
-<img src="images/1621910602466.JPG" width="400" /> 
+<img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/1621910602466.JPG" width="400" /> 
 
 ## WECHAT
 
-<img src="images/0.JPG" width="400" />
+<img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/0.JPG" width="400" />
 
 ## 鸣谢
 
 
-<img src="images/20210522180031226.gif" width="400" />
+<img src="https://raw.githubusercontent.com/jwcjf/jwcjf/main/images/20210522180031226.gif" width="400" />
