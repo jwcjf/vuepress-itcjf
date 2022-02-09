@@ -1,6 +1,6 @@
 {
-    "index_name": "itcjf-dev",
-    "start_urls": ["http://github.com"],
+    "index_name": "itcjf-blog",
+    "start_urls": ["https://jwcjf.github.io/vuepress-itcjf"],
     "selectors": {
       "lvl0": {
         "selector": "p.sidebar-heading.open",
